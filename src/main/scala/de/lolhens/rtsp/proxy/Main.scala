@@ -96,7 +96,7 @@ object Main extends TaskApp {
                                   for {
                                     _ <- setupSentRef.set(false)
                                   } yield {
-                                    val host = rtspServerHost.getOrElse(destinationSocketAddress.getHostString)
+                                    val host = rtspServerHost.getOrElse(destinationClientRemoteAddress.getHostString)
                                     val s"Transport:$transport" = line
                                     val params = transport.trim.split(";")
                                     "Transport: " +
